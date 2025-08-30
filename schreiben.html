@@ -3,117 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Essays</title>
+<title>My Essay Collection</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
-    /* General Styles */
     body {
+        background: linear-gradient(to right, #f0f4ff, #e6f0ff);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(to right, #f9f9f9, #e6f0ff);
-        color: #333;
-        margin: 0;
-        padding: 0;
+        padding-top: 50px;
     }
 
     header {
-        background-color: #4a90e2;
-        color: white;
-        padding: 2rem;
         text-align: center;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: bold;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
-
-    .essay {
-        background-color: white;
-        border-radius: 10px;
-        margin: 1rem 0;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .essay:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .essay-title {
-        padding: 1rem 1.5rem;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        background: linear-gradient(to right, #6a11cb, #2575fc);
         color: white;
-        transition: background 0.3s;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    .essay-title:hover {
-        background: linear-gradient(to right, #2575fc, #6a11cb);
+    .accordion-button {
+        background: linear-gradient(90deg, #2575fc, #6a11cb);
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        transition: all 0.3s;
     }
 
-    .essay-content {
-        display: none;
-        padding: 1rem 1.5rem;
-        border-top: 1px solid #eee;
+    .accordion-button:not(.collapsed) {
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        color: white;
+    }
+
+    .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    .accordion-body {
+        background-color: #f9f9f9;
+        border-radius: 0 0 10px 10px;
         font-size: 1rem;
         line-height: 1.6;
         color: #555;
     }
 
-    /* Smooth open animation */
-    .essay-content.show {
-        display: block;
-        animation: fadeIn 0.3s ease-in-out;
+    .accordion-item {
+        margin-bottom: 1rem;
+        border: none;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.2s;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+    .accordion-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
-
 </style>
 </head>
 <body>
 
-<header>My Essay Collection</header>
+<header>🏆 My Essay Collection 🏆</header>
 
-<div class="container" id="essaysContainer">
-    <!-- Example essays -->
-    <div class="essay">
-        <div class="essay-title">Berlin</div>
-        <div class="essay-content">
+<div class="container">
+    <div class="accordion" id="essayAccordion">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                   In Berlin
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#essayAccordion">
+                <div class="accordion-body">
 Berlin ,Eine Stadt liegt im Herz von Deutschland.es ist sehr,schön , gross aber kalt, hier gibt es viele leute aus der ganzen welt.ich mag die Stadt aber nicht das Essen weder das wetter.ich studiere deutschsprache in einer Sprachschule,die  am AlexanderPlaz  liegt.dort ist es sehr laut aber ich mag gern dort spazieren gehen.Die Hausaufgabe sind viele und schwer, die ich slebt zu machen versuche,manchmal helfe ich meinem Freund Ted deine Hausaufgabe zu machen, weil er nicht allein Studieren kann.nach  dem Unterricht gehe ich täglich ins restaurant essen,immer nehem ich eine Pizza mit dem Käse oder einen Salat mit dem Schnizel.dort gibt es einen netten Killner , er heißt David ,der ein weißes Hemd und eine blaue Hose trägt. 
 ich bin ingenieur von beruf aber möchte ich in Deutschland einen Beruf suchen,dass nicht einfach ist,weil ich die sprache lernen muss. über die Wohnung ?, ich wohne mit drei leuten in einer wohngemeineschaft,die sehr alt aber elegant ist. Die Wohnung gibt drei kleines schlafzimmer, ein grosses Badzimmer und ein bequemes Wohnzimmer. 
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="essay">
-        <div class="essay-title">Technology in the Modern Era</div>
-        <div class="essay-content">
-            Technology has revolutionized the way we communicate, learn, and interact with the world around us. From smartphones to AI, innovation is shaping our future.
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    Technology in the Modern Era
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#essayAccordion">
+                <div class="accordion-body">
+                    Technology has revolutionized the way we communicate, learn, and interact with the world around us. From smartphones to AI, innovation is shaping our future.
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="essay">
-        <div class="essay-title">Cultural Diversity</div>
-        <div class="essay-content">
-            Embracing cultural diversity enriches our lives and broadens our understanding. It allows for meaningful connections and appreciation of global perspectives.
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                    Cultural Diversity
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#essayAccordion">
+                <div class="accordion-body">
+                    Embracing cultural diversity enriches our lives and broadens our understanding. It allows for meaningful connections and appreciation of global perspectives.
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
 
-<script>
-    // Get all essay titles
-    const titles = document.querySelectorAll('.essay-title');
+<!-- Bootstrap JS (with Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    titles.forEach(title => {
-        title.addEventListener('click', () => {
-            const content = title.nextElementSibling;
-
-            // Close other open essays
-            document.querySelecto
+</body>
+</html>
