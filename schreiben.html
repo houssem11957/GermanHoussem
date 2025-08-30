@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Essays</title>
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #f9f9f9, #e6f0ff);
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #4a90e2;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .essay {
+        background-color: white;
+        border-radius: 10px;
+        margin: 1rem 0;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .essay:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .essay-title {
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: white;
+        transition: background 0.3s;
+    }
+
+    .essay-title:hover {
+        background: linear-gradient(to right, #2575fc, #6a11cb);
+    }
+
+    .essay-content {
+        display: none;
+        padding: 1rem 1.5rem;
+        border-top: 1px solid #eee;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    /* Smooth open animation */
+    .essay-content.show {
+        display: block;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+</style>
+</head>
+<body>
+
+<header>My Essay Collection</header>
+
+<div class="container" id="essaysContainer">
+    <!-- Example essays -->
+    <div class="essay">
+        <div class="essay-title">Berlin</div>
+        <div class="essay-content">
+Berlin ,Eine Stadt liegt im Herz von Deutschland.es ist sehr,schön , gross aber kalt, hier gibt es viele leute aus der ganzen welt.ich mag die Stadt aber nicht das Essen weder das wetter.ich studiere deutschsprache in einer Sprachschule,die  am AlexanderPlaz  liegt.dort ist es sehr laut aber ich mag gern dort spazieren gehen.Die Hausaufgabe sind viele und schwer, die ich slebt zu machen versuche,manchmal helfe ich meinem Freund Ted deine Hausaufgabe zu machen, weil er nicht allein Studieren kann.nach  dem Unterricht gehe ich täglich ins restaurant essen,immer nehem ich eine Pizza mit dem Käse oder einen Salat mit dem Schnizel.dort gibt es einen netten Killner , er heißt David ,der ein weißes Hemd und eine blaue Hose trägt. 
+ich bin ingenieur von beruf aber möchte ich in Deutschland einen Beruf suchen,dass nicht einfach ist,weil ich die sprache lernen muss. über die Wohnung ?, ich wohne mit drei leuten in einer wohngemeineschaft,die sehr alt aber elegant ist. Die Wohnung gibt drei kleines schlafzimmer, ein grosses Badzimmer und ein bequemes Wohnzimmer. 
+        </div>
+    </div>
+    <div class="essay">
+        <div class="essay-title">Technology in the Modern Era</div>
+        <div class="essay-content">
+            Technology has revolutionized the way we communicate, learn, and interact with the world around us. From smartphones to AI, innovation is shaping our future.
+        </div>
+    </div>
+    <div class="essay">
+        <div class="essay-title">Cultural Diversity</div>
+        <div class="essay-content">
+            Embracing cultural diversity enriches our lives and broadens our understanding. It allows for meaningful connections and appreciation of global perspectives.
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get all essay titles
+    const titles = document.querySelectorAll('.essay-title');
+
+    titles.forEach(title => {
+        title.addEventListener('click', () => {
+            const content = title.nextElementSibling;
+
+            // Close other open essays
+            document.querySelecto
