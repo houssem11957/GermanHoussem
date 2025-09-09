@@ -13,59 +13,17 @@
       overflow: hidden;
     }
     iframe {
-      width: calc(50% - 5px); /* Adjust for margin */
+      width: 50%;
       height: 100%;
       border: none;
-    }
-    .container {
-      display: flex;
-      gap: 10px; /* Small margin between the two iframes */
-      padding: 5px;
-      box-sizing: border-box;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- First Website -->
-    <iframe id="website1" title="Website 1"></iframe>
+  <!-- First Website -->
+  <iframe src="https://www.example.com" title="Website 1"></iframe>
 
-    <!-- Second Website -->
-    <iframe id="website2" title="Website 2"></iframe>
-  </div>
-
-  <script>
-    // Function to extract query parameters from the URL
-    function getQueryParams() {
-      const params = {};
-      const queryString = window.location.search.substring(1);
-      const pairs = queryString.split('&');
-      pairs.forEach(pair => {
-        const [key, value] = pair.split('=');
-        params[decodeURIComponent(key)] = decodeURIComponent(value);
-      });
-      return params;
-    }
-
-    // Load websites dynamically based on query parameters
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = getQueryParams();
-      const website1 = document.getElementById('website1');
-      const website2 = document.getElementById('website2');
-
-      // Set the src of the iframes based on the query parameters
-      if (params.url1) {
-        website1.src = params.url1;
-      } else {
-        website1.src = 'about:blank'; // Default if no URL is provided
-      }
-
-      if (params.url2) {
-        website2.src = params.url2;
-      } else {
-        website2.src = 'about:blank'; // Default if no URL is provided
-      }
-    });
-  </script>
+  <!-- Second Website -->
+  <iframe src="https://www.anotherexample.com" title="Website 2"></iframe>
 </body>
 </html>
